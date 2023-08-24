@@ -1,0 +1,252 @@
+.first-container {
+  background-color:gray; /* Cambia el color de fondo a gris claro */
+  /* Agrega otros estilos según tus necesidades */
+}
+/* Estilos para el contenedor del botón */
+.titulo-container {
+  display: flex;
+  justify-content: center; /* Centrar horizontalmente */
+  
+}
+h2 {
+  font-size: 24px;
+  font-family: 'Pacifico', cursive;
+  color: darkolivegreen;
+}
+h1 {
+  font-size: 28px;
+  font-family: 'Cookie';
+  color: grey;
+  text-align: center;
+}
+.todo-item:hover {
+  transform: translateY(-5px); /* Eleva el elemento */
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2); /* Sombra */
+  cursor: pointer;
+}
+/* Estilos para la lista de elementos */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
+  background: rgba(255, 255, 255, 0.5); /* Fondo semitransparente blanco */
+}
+
+/* Estilos para los elementos individuales */
+li span {
+  margin-right: 10px;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+li p {
+  margin: 0;
+  flex: 1;
+  font-size: 20px;
+  font-family: 'Cookie', cursive;
+}
+
+/* Estilos para los estados */
+.tarea-pendiente {
+  color: red;
+}
+
+.tarea-completada {
+  color: green;
+  text-decoration: line-through;
+}
+
+/* Estilos para el input */
+input {
+  width: 96%;
+  padding: 10px;
+  margin-bottom: 8px;
+  font-family: 'Cookie';
+  font-style: bold;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 22px;
+}
+
+input::placeholder {
+  color: #aaa;
+}
+
+/* Estilos cuando el input está enfocado */
+input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+/* Estilos para el contenedor del botón */
+.button-container {
+  display: flex;
+  justify-content: center; /* Centrar horizontalmente */
+  margin-top: 20px; /* Agregar margen superior para separación */
+}
+/* Estilos para el botón */
+button {
+  background-color:#8bc34a; ;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-family: Pacifico;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #689f38;
+}
+
+.checked-icon {
+  padding: 2px;
+  margin-right: 4px;
+  cursor: pointer;
+}
+.cancel-icon {
+  cursor: pointer;
+}
+.checked-icon:hover {
+  transform: scale(1.3)
+}
+
+.cancel-icon:hover {
+  transform: scale(1.3)
+}
+.inspirational-quote {
+  position: absolute;
+  left: 125px;
+  top: 30px;
+  width: 28%; /* El 2/5 de la pantalla es aproximadamente el 40% */
+  background-color: rgba(255, 255, 255, 0.4); /* Color de fondo semitransparente */
+  padding: 8px; /* Añade relleno para separar el contenido de los bordes */
+  border-radius: 15px; /* Ajusta este valor para redondear más o menos los bordes */
+}
+.inspirational-quote h1 {
+  font-family: 'Caveat Brush';
+  color: darkgray;
+  font-size: 12px;
+}
+.inspirational-quote h2 {
+  font-family: 'Caveat Brush';
+  color: darkgoldenrod;
+  font-size: 12px;
+}
+
+@media (max-width: 830px) {
+  .background-image {
+    width: 96vw;
+    height: 120vh;
+    background-image: url('./assets/TodoImageSM.jpg');
+    position: relative;
+  }
+  .inspirational-quote {
+    position: relative;
+    left: 4px;
+    top:0px;
+    width: 80%;
+    height: 10vh;
+  }
+  .inspirational-quote h1 {
+    font-family: 'Caveat Brush';
+    color: gray;
+    font-size: 14px;
+  }
+  .todo-list-container {
+    width: 92%; /* Ancho más estrecho en pantallas pequeñas */
+    height:80%;
+    margin-left: 2vw;
+    margin-top: 9vh;
+    box-shadow: none; /* Elimina sombra en pantallas pequeñas */
+    position: absolute;
+    top: 12px;
+  }
+}
+
+@media (min-width: 831px) {
+/* BackgroundImage.css */
+.background-image {
+  width: 100vw;
+  height: 100vh;
+  background-image: url('./assets/TodoImageMD.jpg');
+  background-size: cover;
+  position: relative;
+}
+.todo-list-container {
+  width: 36%; /* Ancho más estrecho en pantallas pequeñas */
+  height:70%;
+  box-shadow: none; /* Elimina sombra en pantallas pequeñas */
+  position: absolute;
+  top: 30px;
+  right: calc( 30% - 32vh);
+  }
+  .inspirational-quote {
+    background-color:none;
+  }
+  .inspirational-quote h2 {
+    font-family: 'Caveat Brush';
+    color: black;
+    font-size: 18px;
+  }
+
+}
+
+@media (min-width: 980px) {
+  .background-image {
+    background-image: url('./assets/TodoImageLG.jpg');
+    width: 100%;
+    position: absolute;
+  }
+  .todo-list-container {
+    width: 36%; /* Ancho más estrecho en pantallas pequeñas */
+    height:70%;
+    box-shadow: none; /* Elimina sombra en pantallas pequeñas */
+    position: absolute;
+    top: 10vh;
+    right: 10vw;
+  }
+  .inspirational-quote {
+    position: absolute;
+    left: 168px;
+    top:62px
+  }
+  .inspirational-quote h1 {
+    font-family: 'Caveat Brush';
+    color: darkolivegreen;
+    font-size: 22px;
+  }
+}
+
+
+@media (min-width: 1200px) {
+  .background-image {
+    background-image: url('./assets/TodoImageLG.jpg');
+    width: 100%;
+    position: relative;
+  }
+  .todo-list-container {
+    width: 38%; /* Ancho más estrecho en pantallas pequeñas */
+    height:70%;
+    box-shadow: none; /* Elimina sombra en pantallas pequeñas */
+    position: absolute;
+    top: 18vh;
+    right: 10vw;
+  }
+  .inspirational-quote {
+    position: absolute;
+    left: 168px;
+    top:62px
+  }
+
+}
