@@ -1,0 +1,81 @@
+@media (max-width: 831px) {
+
+.modal {
+    z-index: 10;
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centra el modal correctamente */
+    width: 50%;
+    height: 60%;
+    background-color: rgba(14, 17, 17, 0.881); /* Fondo semitransparente */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    border-radius: 8px;
+    transition: opacity 0.3s ease; /* Agrega una transición suave a la propiedad de opacidad */
+    }
+    .modal h1 {
+        color: lightcyan;
+        font-size: 28px;
+        padding: 14px;
+        margin-top: 10px;
+    }
+    .modal input {
+        padding: 10px;
+        font-family: 'Caveat Brush';
+        height: 10vh;
+        width: 90%;
+        text-align: center;
+    }
+    .modal button {
+        padding: 10px;
+        margin-top: 10px;
+        position: absolute;
+        bottom: 5vh;
+    }
+    .modal .cancel-icon {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        height: 3vh;
+    }
+}
+@media (min-width: 830px) {
+    .modal {
+        z-index: 10;
+        position: fixed;
+        top: 11vh;
+        left: 13vw;
+        width: 38%;
+        height: 70%;
+        background-color: rgba(14, 17, 17, 0.881); /* Fondo semitransparente */
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        border-radius: 8px;
+    }
+    .modal h1 {
+        color: lightcyan;
+        font-size: 34px;
+        padding: 28px;
+        margin-top: 28px;
+    }
+    .modal input {
+        padding: 6px;
+        font-family: 'Caveat Brush';
+        height: 10vh;
+        text-align: center;
+    }
+    .modal button {
+        padding: 10px;
+        margin-top: 10px;
+        justify-content: center; /* Centrar horizontalmente */;
+    }
+    .modal .cancel-icon {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        height: 3vh;
+    }
+}

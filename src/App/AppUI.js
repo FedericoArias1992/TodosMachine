@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from "react"; //Los estados deben estar en el componente papa y ser pasados al componente hijo
 import '../styles.css';
 import { TodoCounter } from '../components/TodoCounter';
 import { TodoSearch } from '../components/TodoSearch';  
@@ -5,9 +6,9 @@ import { TodoList } from '../components/TodoList';
 import { TodoItem } from '../components/TodoItem';
 import { CreateTodoButton } from '../components/CreateTodoButton';
 import {EmptyTodos} from '../components/EmptyTodos'
-import React, { useState, useEffect } from "react"; //Los estados deben estar en el componente papa y ser pasados al componente hijo
-
-
+import { Modal } from "../Modal";
+import { TodoForm } from '../components/TodoForm'
+;
 function AppUI ({
   reducedResult,
   search,
@@ -16,7 +17,11 @@ function AppUI ({
   CompletarTodo,
   eliminarTodo,
   motivationalQuote,
-  error
+  error,
+  openModal,
+  showModal,
+  closeModal, 
+  addTodo
 })
 {
 return (
@@ -38,7 +43,7 @@ return (
         />
         <TodoList />
           {error && <h1>Hubo un error al cargar los Todos!</h1>}
-          {(filteredTodos.length ===0) && <EmptyTodos />}
+          {(!reducedResult.totalTasks) && <EmptyTodos />}
           {filteredTodos.map(todo => (    //usamos el estado inicial de los todos para renderizarlos
             <TodoItem key={todo.tarea} texto={todo.tarea} state={todo.estado} 
               onComplete={()=> CompletarTodo(todo.tarea)}
@@ -46,7 +51,12 @@ return (
             />
           ))}
         <TodoList />
-        <CreateTodoButton />
+        <CreateTodoButton showModal={showModal}/>
+          {openModal && (
+          <Modal closeModal={closeModal}>
+            <TodoForm closeModal={closeModal} addTodo={addTodo}/>
+          </Modal>
+        )}
       </div>
     </div>
   </div>

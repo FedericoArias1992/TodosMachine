@@ -1,9 +1,9 @@
 
-function CreateTodoButton(){
+function CreateTodoButton( {showModal}){
     return (
         <div class="button-container">
-            <button>
-                Presiona aca para crear Tarea
+            <button onClick={showModal}>
+                Crear Tarea
             </button>
         </div>
     );

@@ -3,6 +3,7 @@ import react from 'react';
 import { AppUI } from './AppUI';
 import { useLocalStorage } from '../Hooks/useLocalStorage';
 import React, { useState, useEffect } from "react"; //Los estados deben estar en el componente papa y ser pasados al componente hijo
+import { useQuote } from '../Hooks/useQuote';
 
 // const array = [{tarea:'Estudiar 30 minutos al dia', estado:'Pendiente'},
 //               {tarea:'Dormir 8 horas al dia', estado:'Pendiente'},
@@ -19,6 +20,23 @@ import React, { useState, useEffect } from "react"; //Los estados deben estar en
 function App () {
   let [search, setSearch] = useState("");
   let [todos, saveStateTodos, error]= useLocalStorage([]);
+  let [openModal, setOpenModal] = useState(false);
+  const showModal = () => {
+    setOpenModal(true);
+  };
+  const closeModal = () => {
+    setOpenModal(false);
+  };
+  const addTodo = (texto) => {
+    const newTodos = [...todos];
+    newTodos.push({
+      tarea:texto,
+      estado:"Pendiente"
+    });
+    saveStateTodos(newTodos);
+  };
+  const motivationalQuote = useQuote('');
+
       //console.log(todos[0]);  -> tarea + estado_tarea
       //console.log(typeof saveStateTodos); //->function -> es el customhook
   //Funcion para obtener la estadistica de cantidad de completados y totales
@@ -57,26 +75,6 @@ function App () {
       saveStateTodos(newTodos);
     }
   }
-  //Vamos a crear un customHook para obtener una frase motivacional y renderizarla:
-  const [motivationalQuote, setMotivationalQuote] = useState("");
-
-  useEffect(() => {
-    // Función asincrónica para obtener la frase motivacional
-    async function fetchMotivationalQuote() {
-      try {
-        const response = await fetch("https://zenquotes.io/api/random");
-        const data = await response.json();
-        //console.log(data[0]?.q);
-        const quote = data[0]?.q; // Obtenemos la cita desde la respuesta
-        setMotivationalQuote(quote);
-      } catch (error) {
-        console.error("Error al obtener la frase motivacional:", error);
-      }
-    }
-    // Llamamos a la función para obtener la frase motivacional cuando el componente se monta
-    fetchMotivationalQuote();
-  }, []);
-  
 
 //Vamos a usar otro archivo para la interfaz
   return (
@@ -89,10 +87,12 @@ function App () {
       eliminarTodo = {eliminarTodo}
       motivationalQuote = {motivationalQuote}
       error ={error}
+      openModal ={openModal}
+      showModal = {showModal}
+      closeModal ={closeModal}
+      addTodo={addTodo}
     />
-
   );
-
 };
 
 export default App;
