@@ -14,7 +14,7 @@ function TodoForm({closeModal, addTodo}){
     return (
         <form onSubmit={onSubmit}>
             <h1>Ingresa el Todo para Realizar</h1>
-            <input value={newTodoValue} onChange={onChange} placeholder="Agrega la tarea!" />
+            <input value={newTodoValue} onChange={onChange} placeholder="Agrega la tarea!" required />
             <div className="button-container">
                 <button type="submit">
                     Guardar

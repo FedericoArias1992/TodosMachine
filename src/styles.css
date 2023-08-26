@@ -1,12 +1,12 @@
 .first-container {
   background-color:gray; /* Cambia el color de fondo a gris claro */
   /* Agrega otros estilos según tus necesidades */
+  padding: 0px;
 }
 /* Estilos para el contenedor del botón */
 .titulo-container {
   display: flex;
   justify-content: center; /* Centrar horizontalmente */
-  
 }
 h2 {
   font-size: 24px;
@@ -75,11 +75,9 @@ input {
   border-radius: 4px;
   font-size: 22px;
 }
-
 input::placeholder {
   color: #aaa;
 }
-
 /* Estilos cuando el input está enfocado */
 input:focus {
   outline: none;
