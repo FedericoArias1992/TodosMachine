@@ -1,18 +1,19 @@
 {
   "files": {
-    "main.css": "/TodosMachine/static/css/main.2f1ddb82.css",
-    "main.js": "/TodosMachine/static/js/main.a7bda745.js",
+    "main.css": "/TodosMachine/static/css/main.6b548b54.css",
+    "main.js": "/TodosMachine/static/js/main.60a541fa.js",
     "static/media/TodoImageLG.jpg": "/TodosMachine/static/media/TodoImageLG.47646eac81838612c705.jpg",
+    "static/media/book_sheet.jpg": "/TodosMachine/static/media/book_sheet.86237005d94c97fd5dc5.jpg",
     "static/media/TodoImageMD.jpg": "/TodosMachine/static/media/TodoImageMD.419c06dacdd05ce0664a.jpg",
     "static/media/TodoImageSM.jpg": "/TodosMachine/static/media/TodoImageSM.43e5086efd9ebb9d3897.jpg",
     "index.html": "/TodosMachine/index.html",
     "static/media/icons8-cancel.svg": "/TodosMachine/static/media/icons8-cancel.2ef9bff22d5cacad670f671228b54896.svg",
     "static/media/icons8-done.svg": "/TodosMachine/static/media/icons8-done.a25437a7e922c021fdc3ef498e21590d.svg",
-    "main.2f1ddb82.css.map": "/TodosMachine/static/css/main.2f1ddb82.css.map",
-    "main.a7bda745.js.map": "/TodosMachine/static/js/main.a7bda745.js.map"
+    "main.6b548b54.css.map": "/TodosMachine/static/css/main.6b548b54.css.map",
+    "main.60a541fa.js.map": "/TodosMachine/static/js/main.60a541fa.js.map"
   },
   "entrypoints": [
-    "static/css/main.2f1ddb82.css",
-    "static/js/main.a7bda745.js"
+    "static/css/main.6b548b54.css",
+    "static/js/main.60a541fa.js"
   ]
 }
