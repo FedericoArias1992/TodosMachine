@@ -20,6 +20,22 @@ import { useQuote } from '../Hooks/useQuote';
 function App () {
   let [search, setSearch] = useState("");
   let [todos, saveStateTodos, error]= useLocalStorage([]);
+  const [showNewTodoButton, setShowNewTodoButton] = useState(false);
+  // Cuando hayan 8 tareas, muestra el nuevo contenedor
+  let todos9andBeyond;
+  if (todos.length >= 8 && !showNewTodoButton) {
+    setShowNewTodoButton(true);
+  };
+  if (todos.length < 8 && showNewTodoButton) {  //si hay menos de 8 tareas saco el boton
+    setShowNewTodoButton(false);
+  }
+  const [showNewTodoList, setShowNewTodoList] = useState(false);
+  const closeNextTodoList = () => {
+    setShowNewTodoList(false);
+  }
+  const openNextTodoList = () => {
+    setShowNewTodoList(true);
+  }
   let [openModal, setOpenModal] = useState(false);
   const showModal = () => {
     setOpenModal(true);
@@ -48,8 +64,8 @@ function App () {
   return accumulator;
   }, { totalTasks: 0, completedTasks: 0 });
 
-  // Filtra el array 'todos' basado en el valor de 'search'
-  const filteredTodos = todos.filter(todo => {
+  // Filtra el array 'todos' basado en el valor de 'search', ademas vamos a renderizar de a 8 todos pq sino se ve feo en compu
+  const filteredTodos = todos.slice(0, 8).filter(todo => {
     // Verifica si la tarea incluye la palabra introducida en 'search'
     return todo.tarea.toLowerCase().includes(search.toLowerCase());
   });
@@ -91,6 +107,12 @@ function App () {
       showModal = {showModal}
       closeModal ={closeModal}
       addTodo={addTodo}
+      showNewTodoList = {showNewTodoList}
+      setShowNewTodoList = {setShowNewTodoList}
+      closeNextTodoList = {closeNextTodoList}
+      showNewTodoButton ={ showNewTodoButton}
+      openNextTodoList = {openNextTodoList}
+      todos = {todos}
     />
   );
 };

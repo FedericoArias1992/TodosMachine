@@ -84,14 +84,16 @@ input:focus {
   border-color: #007bff;
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
-/* Estilos para el contenedor del botón */
+/* Estilos para el contenedor del botón de agregar tareas*/
 .button-container {
   display: flex;
   justify-content: center; /* Centrar horizontalmente */
-  margin-top: 20px; /* Agregar margen superior para separación */
+  margin-top: -8px; /* Agregar margen superior para separación */
+  z-index: 15;
 }
 /* Estilos para el botón */
 button {
+  z-index: 16;
   background-color:#a9c895; ;
   color: white;
   border: none;
@@ -115,13 +117,23 @@ button:hover {
 .cancel-icon {
   cursor: pointer;
 }
+.next-todo-list-cancel-icon {
+  cursor: pointer;
+  position: absolute;
+  top: 1vh;
+  right: 0.5vw;
+  height: 24px;
+}
+.next-todo-list-cancel-icon:hover {
+  transform: scale(1.3)
+}
+.cancel-icon:hover {
+  transform: scale(1.3)
+}
 .checked-icon:hover {
   transform: scale(1.3)
 }
 
-.cancel-icon:hover {
-  transform: scale(1.3)
-}
 .inspirational-quote {
   position: absolute;
   left: 125px;
@@ -150,6 +162,10 @@ button:hover {
     position: relative;
     z-index: 1;
   }
+  .button-container {
+    position: relative;
+    top: 10vh;
+  }
   .inspirational-quote {
     position: relative;
     left: 4px;
@@ -171,6 +187,38 @@ button:hover {
     position: absolute;
     top: 12px;
   }
+  .new-todo-list {
+    z-index: 8;
+    position: absolute;
+    top: 52vh;
+    left: 45vw;
+    transform: translate(-50%, -50%); /* Centra el modal correctamente */
+    width: 100%;
+    height: 87vh;
+    background-color: rgba(106, 108, 108, 0.881); /* Fondo semitransparente */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-image: url('./assets/book_sheet.jpg');
+    z-index: 1;
+    background-size: cover;
+    border-radius: 8px;
+    transition: opacity 0.3s ease; /* Agrega una transición suave a la propiedad de opacidad */
+    }
+    .new-titulo-container {
+      width: 90%;
+      margin-top: 3vh;
+    }
+    .show-new-list-button {
+      position: absolute;
+      right: -2vw;
+      top: -5vh;
+      height: 10%;
+      width: 20%;
+      z-index: 10;
+      background-color: lightgoldenrodyellow;
+      color: gray;
+    }
 }
 
 @media (min-width: 831px) {
@@ -199,7 +247,44 @@ button:hover {
     color: black;
     font-size: 18px;
   }
-
+  .new-todo-list {
+    z-index: 8;
+    position: fixed;
+    top: 52vh;
+    right: -12.5%;
+    transform: translate(-50%, -50%); /* Centra el modal correctamente */
+    width: 40%;
+    height: 87vh;
+    background-color: rgba(106, 108, 108, 0.881); /* Fondo semitransparente */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-image: url('./assets/book_sheet.jpg');
+    z-index: 1;
+    background-size: cover;
+    border-radius: 8px;
+    transition: opacity 0.3s ease; /* Agrega una transición suave a la propiedad de opacidad */
+    }
+    .new-titulo-container {
+      width: 90%;
+      margin-top: 3vh;
+    }
+    .show-new-list-button {
+      position: absolute;
+      right: -8vw;
+      top: 50%;
+      height: 10%;
+      width: 20%;
+      z-index: 10;
+      background-color: lightgoldenrodyellow;
+      color: gray;
+    }
+    .new-todo-list {
+      z-index: 8;
+      position: fixed;
+      top: 52vh;
+      right: -16%;
+      }
 }
 
 @media (min-width: 980px) {
@@ -227,6 +312,12 @@ button:hover {
     color: darkolivegreen;
     font-size: 22px;
   }
+  .new-todo-list {
+    z-index: 8;
+    position: fixed;
+    top: 52vh;
+    right: -12%;
+    }
 }
 
 @media (min-width: 1200px) {

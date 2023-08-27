@@ -7,8 +7,9 @@ import { TodoItem } from '../components/TodoItem';
 import { CreateTodoButton } from '../components/CreateTodoButton';
 import {EmptyTodos} from '../components/EmptyTodos'
 import { Modal } from "../Modal";
-import { TodoForm } from '../components/TodoForm'
-;
+import { TodoForm } from '../components/TodoForm';
+import { NextTodoList } from "../components/NextTodoList";
+
 function AppUI ({
   reducedResult,
   search,
@@ -21,7 +22,13 @@ function AppUI ({
   openModal,
   showModal,
   closeModal, 
-  addTodo
+  addTodo,
+  showNewTodoList,
+  setShowNewTodoList,
+  closeNextTodoList,
+  showNewTodoButton,
+  openNextTodoList,
+  todos
 })
 {
 return (
@@ -57,6 +64,11 @@ return (
             <TodoForm closeModal={closeModal} addTodo={addTodo}/>
           </Modal>
         )}
+        <NextTodoList todos={todos} openNextTodoList={openNextTodoList} 
+          showNewTodoList ={showNewTodoList} setShowNewTodoList ={setShowNewTodoList} 
+          showNewTodoButton ={ showNewTodoButton} closeNextTodoList={closeNextTodoList} 
+          CompletarTodo = {CompletarTodo} eliminarTodo = {eliminarTodo} />
+        <NextTodoList />
       </div>
     </div>
   </div>
